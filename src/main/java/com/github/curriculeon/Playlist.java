@@ -28,6 +28,12 @@ public class Playlist {
     public String getCurrentSelection() {
         return songNameArray[currentIndex];
     }
+    public void setSongNameArray(String[] songs){
+        this.songNameArray = songs;
+    }
+
+    public Playlist() {
+    }
 
     public void goToPreviousSong() {
         System.out.println("inside prev song");
