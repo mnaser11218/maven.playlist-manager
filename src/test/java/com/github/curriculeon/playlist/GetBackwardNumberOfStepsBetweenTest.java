@@ -41,7 +41,7 @@ public class GetBackwardNumberOfStepsBetweenTest {
     @Test
     public void test2() {
         // given
-        String[] songNameList = new String[]{"dancinginthedark", "rio", "liveoak", "liveoak"};
+        String[] songNameList = new String[]{"dancinginthedark", "rio", "liveoaK", "liveoak"};
         Integer startingIndex = 1;
         Integer desiredSongIndex = songNameList.length-1;
         Integer expectedNumberOfSteps = 2;

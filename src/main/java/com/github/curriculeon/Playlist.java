@@ -53,11 +53,12 @@ public class Playlist {
     public Integer getMinimumNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
         int index = Arrays.asList(songNameArray).indexOf(desiredSong);
         int forward = 0;
-        int backward = 0;
+        int backward =0;
         this.currentIndex = currentIndex;
         if(this.currentIndex == index){
             return 0;
         }
+
         while(this.currentIndex != index){
             System.out.println(this.currentIndex);
             goToNextSong();
@@ -77,10 +78,26 @@ public class Playlist {
     }
 
     public Integer getForwardNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
-        return null;
+        int index = Arrays.asList(songNameArray).indexOf(desiredSong);
+        int forward = 0;
+        this.currentIndex = currentIndex;
+        while(this.currentIndex != index){
+            goToNextSong();
+            forward++;
+        }
+
+        return forward;
     }
 
     public Integer getBackwardNumberOfStepsBetween(Integer currentIndex, String desiredSong) {
-        return null;
+
+        int index = Arrays.asList(songNameArray).indexOf(desiredSong);
+        int backward = 0;
+        this.currentIndex = currentIndex;
+        while(this.currentIndex != index){
+            goToPreviousSong();
+            backward++;
+        }
+        return backward;
     }
 }
