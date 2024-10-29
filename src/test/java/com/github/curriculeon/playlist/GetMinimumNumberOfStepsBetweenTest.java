@@ -82,8 +82,8 @@ public class GetMinimumNumberOfStepsBetweenTest {
     public void test6() {
         // given
         String[] playlist = {"The", "Quick", "Brown", "Fox", "Jumps", "Over", "The", "Lazy", "Dog"};
-        int desiredSongIndex = 4;
-        int startingIndex = 6;
+        int desiredSongIndex = 6;
+        int startingIndex = 4;
         int expected = 2;
 
         test(playlist, desiredSongIndex, startingIndex, expected);
