@@ -4,6 +4,8 @@ package com.github.curriculeon;
 //import com.sun.tools.javac.platform.PlatformUtils;
 
 //import java.util.ArrayList;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PlaylistManager {
@@ -44,7 +46,6 @@ public class PlaylistManager {
         int songLength = this.playlist.getSongNameArray().length;
         if(songLength == 0){
             this.playlist.setSongNameArray(new String[]{songToAdd});
-            System.out.println("inside length 0");
         }else{
             String[]updatedSongs = new String[songLength];
             for(int i=0; i< updatedSongs.length; i++){
@@ -59,6 +60,12 @@ public class PlaylistManager {
     }
 
     public void removeSong(String songToRemove) {
+        if(this.playlist.getSongNameArray().length ==0 ){
+            throw new IllegalArgumentException();
+        }
+        List<String>songs = new ArrayList<>(Arrays.asList(this.playlist.getSongNameArray()));
+        songs.remove(songToRemove);
+        this.playlist.setSongNameArray(songs.toArray(new String[0]));
     }
 
     public void printAll() {
